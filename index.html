@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Vitrine M1</title>
+</head>
+
+<body>
+  <header>
+    <div class="header--container">
+      <div class="header--logo-container">
+        <h1 class="header--logo">Weartake</h1>
+      </div>
+      <nav class="header--nav-mobile">
+        <img src="./assets/img/menu.svg" alt="">
+        <ul class="header--menu-mobile">
+          <a href="#" title="todos">
+            <li class="header--active-menu-item">Todos</li>
+          </a>
+          <a href="#" title="acessórios">
+            <li>Acessórios</li>
+          </a>
+          <a href="#" title="calçados">
+            <li>Calçados</li>
+          </a>
+          <a href="#" title="camisetas">
+            <li>Camisetas</li>
+          </a>
+        </ul>
+      </nav>
+      <nav class="header--nav-desktop">
+        <ul class="header--menu-desktop">
+          <a href="#" title="todos">
+            <li class="header--active-menu-item">Todos</li>
+          </a>
+          <a href="#" title="acessórios">
+            <li>Acessórios</li>
+          </a>
+          <a href="#" title="calçados">
+            <li>Calçados</li>
+          </a>
+          <a href="#" title="camisetas">
+            <li>Camisetas</li>
+          </a>
+        </ul>
+      </nav>
+  </header>
+  </div>
+  <main>
+    <section class="showcase">
+    </section>
+    <aside>
+      <section class="aside--search-area">
+        <input class="aside--search-area--text-input" type="text" placeholder="Digite aqui sua pesquisa">
+        <input class="aside--search-area--search-button" type="button" value="Pesquisar">
+      </section>
+      <section class="aside--cart-area">
+        <div class="aside--title-container">
+          <img src="./assets/img/open-down.svg" alt="icon to open cart"  onclick="handleWithShowCartButton()">
+          <h2>Carrinho de compras</h2>
+        </div>
+        <div class="aside--inside-cart hide" id="containerCart">
+          <!-- <div class="aside--empty-cart">
+            <h3>Carrinho vázio</h3>
+            <span>Adicione itens</span>
+          </div> -->
+        </div>
+      </section>
+    </aside>
+  </main>
+  <script src="./assets/js/products.js"></script>
+  <script src="./assets/js/render.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
