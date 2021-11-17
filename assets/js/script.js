@@ -67,3 +67,11 @@ function updateCurrentPage(e){
     navItem.classList.add('header--active-menu-item')
   })
 }
+
+function handleWithSearchButton(){
+  const searchArea = document.querySelector('.aside--search-area--text-input')
+
+  populateShowcase(currentPage, searchArea.value)
+  
+  searchArea.value = ''
+}
