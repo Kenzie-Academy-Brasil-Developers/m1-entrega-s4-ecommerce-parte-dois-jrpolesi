@@ -62,5 +62,27 @@ function createCardDetails(card, product){
 }
 
 function updateCart(){
-  console.log(cart)
+  isCartEmpty()
+  createCartItem()
+
+}
+
+function isCartEmpty(){
+  const emptyCart = document.querySelector('.aside--empty-cart')
+  const cartItems = document.querySelector('.aside--inside-cart-items')
+  const cartTotal = document.querySelector('.aside--total-cart')
+
+  if(cart.length === 0){
+    emptyCart.classList.remove('hide')
+    cartItems.classList.add('hide')
+    cartTotal.classList.add('hide')
+  } else {
+    emptyCart.classList.add('hide')
+    cartItems.classList.remove('hide')
+    cartTotal.classList.remove('hide')
+  }
+}
+
+function createCartItem(){
+  
 }

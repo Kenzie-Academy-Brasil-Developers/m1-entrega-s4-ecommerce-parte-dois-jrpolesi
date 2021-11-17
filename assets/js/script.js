@@ -1,4 +1,5 @@
 populateShowcase()
+updateCart()
 
 const addToCartButtons = document.querySelectorAll('span[data-id]')
 
@@ -26,5 +27,5 @@ function addToCart(e){
 
 function handleWithShowCartButton(){
  const buyCartDiv = document.getElementById('containerCart')
- buyCartDiv.classList.toggle('hide')
+ buyCartDiv.classList.toggle('hideCart')
 }
