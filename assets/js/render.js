@@ -135,6 +135,7 @@ function createCartItemInfo(cartItem, product){
   const removeButton = document.createElement('span')
   removeButton.className = 'cartItem--remove-of-cart'
   removeButton.innerText = 'Remover produto'
+  removeButton.dataset.id = product.id
   removeButton.addEventListener('click', removeItem)
 
   div.append(h3, price, removeButton)

@@ -9,48 +9,61 @@ addToCartButtons.forEach((button) => {
   button.addEventListener('click', addToCart)
 })
 
-function addToCart(e){
+function addToCart(e) {
   const productId = e.target.dataset.id
   let product = {}
-  
-  for(let i = 0; i < products.length; i++){
-    if(products[i].id === productId){
+
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].id === productId) {
       product = products[i]
+      break
     }
   }
 
-  if(!cart.includes(product)){
-    cart.push(product)
-    updateCart()
-  }  
+  cart.push(product)
+  updateCart()
 }
 
 const pages = document.querySelectorAll('.header--container nav a')
 pages.forEach((page) => {
-  page.addEventListener('click', (e) => {
-    e.preventDefault()
-    currentPage = e.currentTarget.title
-    populateShowcase(currentPage)
-  })
+  page.addEventListener('click', updateCurrentPage)
 })
 
-// function removeItem(){
-//   const productId = e.target.dataset.id
-//   let product = {}
-  
-//   for(let i = 0; i < products.length; i++){
-//     if(products[i].id === productId){
-//       product = products[i]
-//     }
-//   }
+function removeItem(e) {
+  const productId = e.target.dataset.id
+  let product = {}
 
-//   if(!cart.includes(product)){
-//     cart.splice(cart)
-//     updateCart()
-//   }  
-// }
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].id === productId) {
+      product = products[i]
+      break
+    }
+  }
 
-function handleWithShowCartButton(){
- const buyCartDiv = document.getElementById('containerCart')
- buyCartDiv.classList.toggle('hideCart')
+  cart.splice(cart.indexOf(product), 1)
+  updateCart()
+}
+
+function handleWithShowCartButton() {
+  const buyCartDiv = document.getElementById('containerCart')
+  buyCartDiv.classList.toggle('hideCart')
+}
+
+
+function updateCurrentPage(e){
+  e.preventDefault()
+  currentPage = e.currentTarget.title
+  populateShowcase(currentPage)
+
+  const headerNavItems = document.querySelectorAll('header nav a')
+
+  headerNavItems.forEach((navItem) => {
+    navItem.classList.remove('header--active-menu-item')
+  })
+
+  const sameTitleItem = document.querySelectorAll(`nav a[title="${currentPage}"]`)
+    
+  sameTitleItem.forEach((navItem) => {
+    navItem.classList.add('header--active-menu-item')
+  })
 }

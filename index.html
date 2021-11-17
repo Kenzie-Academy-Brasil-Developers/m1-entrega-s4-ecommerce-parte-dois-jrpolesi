@@ -22,8 +22,8 @@
       <nav class="header--nav-mobile">
         <img src="./assets/img/menu.svg" alt="">
         <ul class="header--menu-mobile">
-          <a href="#" title="todos">
-            <li class="header--active-menu-item">Todos</li>
+          <a href="#" title="todos" class="header--active-menu-item">
+            <li>Todos</li>
           </a>
           <a href="#" title="acessórios">
             <li>Acessórios</li>
@@ -38,8 +38,8 @@
       </nav>
       <nav class="header--nav-desktop">
         <ul class="header--menu-desktop">
-          <a href="#" title="todos">
-            <li class="header--active-menu-item">Todos</li>
+          <a href="#" title="todos" class="header--active-menu-item">
+            <li>Todos</li>
           </a>
           <a href="#" title="acessórios">
             <li>Acessórios</li>
@@ -60,7 +60,8 @@
     <aside>
       <section class="aside--search-area">
         <input class="aside--search-area--text-input" type="text" placeholder="Digite aqui sua pesquisa">
-        <input class="aside--search-area--search-button" type="button" value="Pesquisar" onclick="populateShowcase(currentPage, document.querySelector('.aside--search-area--text-input').value)">
+        <input class="aside--search-area--search-button" type="button" value="Pesquisar"
+          onclick="populateShowcase(currentPage, document.querySelector('.aside--search-area--text-input').value)">
       </section>
       <section class="aside--cart-area">
         <div class="aside--title-container">
@@ -73,40 +74,6 @@
             <span>Adicione itens</span>
           </div>
           <section class="aside--inside-cart-items">
-            <article class="aside--cartItem">
-              <figure>
-                <img src="./assets/img/men-jacket.png" alt="">
-                <figcaption>Lightweight Jacket</figcaption>
-              </figure>
-              <div>
-                <h3>Lightweight Jacket</h3>
-                <span class="cartItem--price">R$ 100.00</span>
-                <span class="cartItem--remove-of-cart">Remover produto</span>
-              </div>
-            </article>
-            <article class="aside--cartItem">
-              <figure>
-                <img src="./assets/img/men-jacket.png" alt="">
-                <figcaption>Lightweight Jacket</figcaption>
-              </figure>
-              <div>
-                <h3>Lightweight Jacket</h3>
-                <span class="cartItem--price">R$ 100.00</span>
-                <span class="cartItem--remove-of-cart">Remover produto</span>
-              </div>
-            </article>
-            <article class="aside--cartItem">
-              <figure>
-                <img src="./assets/img/men-jacket.png" alt="">
-                <figcaption>Lightweight Jacket</figcaption>
-              </figure>
-              <div>
-                <h3>Lightweight Jacket</h3>
-                <span class="cartItem--price">R$ 100.00</span>
-                <span class="cartItem--remove-of-cart">Remover produto</span>
-              </div>
-            </article>
-            
           </section>
           <section class="aside--total-cart">
             <div>
