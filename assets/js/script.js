@@ -1,3 +1,5 @@
+let currentPage = 'todos'
+
 populateShowcase()
 updateCart()
 
@@ -6,7 +8,6 @@ const addToCartButtons = document.querySelectorAll('span[data-id]')
 addToCartButtons.forEach((button) => {
   button.addEventListener('click', addToCart)
 })
-
 
 function addToCart(e){
   const productId = e.target.dataset.id
@@ -23,6 +24,15 @@ function addToCart(e){
     updateCart()
   }  
 }
+
+const pages = document.querySelectorAll('.header--container nav a')
+pages.forEach((page) => {
+  page.addEventListener('click', (e) => {
+    e.preventDefault()
+    currentPage = e.currentTarget.title
+    populateShowcase(currentPage)
+  })
+})
 
 // function removeItem(){
 //   const productId = e.target.dataset.id

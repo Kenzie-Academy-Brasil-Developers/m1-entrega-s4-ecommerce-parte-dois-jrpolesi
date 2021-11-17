@@ -4,9 +4,9 @@ function populateShowcase(tag, search) {
 
   let showcaseProducts = [...products]
 
-  if (tag) {
+  if (tag && tag !== 'todos') {
     showcaseProducts = showcaseProducts.filter((product) => {
-      return product.tag === tag
+      return product.tag.toLowerCase() === tag
     })
   }
 
