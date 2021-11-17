@@ -1,14 +1,22 @@
-function populateShowcase(tag) {
+function populateShowcase(tag, search) {
   const showCase = document.querySelector('.showcase')
   showCase.innerHTML = ''
 
+  let showcaseProducts = [...products]
+
   if (tag) {
-    products = products.filter((product) => {
+    showcaseProducts = showcaseProducts.filter((product) => {
       return product.tag === tag
     })
   }
 
-  products.forEach((product) => {
+  if (search){
+    showcaseProducts = showcaseProducts.filter((product) => {
+      return product.name.toLowerCase().includes(search.toLowerCase())
+    })
+  }
+
+  showcaseProducts.forEach((product) => {
     const card = document.createElement('article')
     card.className = 'showcase--card'
 
