@@ -20,19 +20,13 @@ function addToCart(e) {
     }
   }
 
-  if (!cart.includes(product)) {
-    cart.push(product)
-    updateCart()
-  }
+  cart.push(product)
+  updateCart()
 }
 
 const pages = document.querySelectorAll('.header--container nav a')
 pages.forEach((page) => {
-  page.addEventListener('click', (e) => {
-    e.preventDefault()
-    currentPage = e.currentTarget.title
-    populateShowcase(currentPage)
-  })
+  page.addEventListener('click', updateCurrentPage)
 })
 
 function removeItem(e) {
@@ -53,4 +47,23 @@ function removeItem(e) {
 function handleWithShowCartButton() {
   const buyCartDiv = document.getElementById('containerCart')
   buyCartDiv.classList.toggle('hideCart')
+}
+
+
+function updateCurrentPage(e){
+  e.preventDefault()
+  currentPage = e.currentTarget.title
+  populateShowcase(currentPage)
+
+  const headerNavItems = document.querySelectorAll('header nav a')
+
+  headerNavItems.forEach((navItem) => {
+    navItem.classList.remove('header--active-menu-item')
+  })
+
+  const sameTitleItem = document.querySelectorAll(`nav a[title="${currentPage}"]`)
+    
+  sameTitleItem.forEach((navItem) => {
+    navItem.classList.add('header--active-menu-item')
+  })
 }
