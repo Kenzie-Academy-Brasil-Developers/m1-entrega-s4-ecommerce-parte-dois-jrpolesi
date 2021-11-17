@@ -60,18 +60,18 @@
     <aside>
       <section class="aside--search-area">
         <input class="aside--search-area--text-input" type="text" placeholder="Digite aqui sua pesquisa">
-        <input class="aside--search-area--search-button" type="button" value="Pesquisar">
+        <input class="aside--search-area--search-button" type="button" value="Pesquisar" onclick="populateShowcase(currentPage, document.querySelector('.aside--search-area--text-input').value)">
       </section>
       <section class="aside--cart-area">
         <div class="aside--title-container">
           <img src="./assets/img/open-down.svg" alt="icon to open cart" onclick="handleWithShowCartButton()">
           <h2>Carrinho de compras</h2>
         </div>
-        <div class="aside--inside-cart hide" id="containerCart">
-          <!-- <div class="aside--empty-cart">
+        <div class="aside--inside-cart hideCart" id="containerCart">
+          <div class="aside--empty-cart">
             <h3>Carrinho vázio</h3>
             <span>Adicione itens</span>
-          </div> -->
+          </div>
           <section class="aside--inside-cart-items">
             <article class="aside--cartItem">
               <figure>
@@ -111,11 +111,11 @@
           <section class="aside--total-cart">
             <div>
               <h3>Quantidade:</h3>
-              <span>3</span>
+              <span class="total-cart--quantity">3</span>
             </div>
             <div>
               <h3>Total:</h3>
-              <span>R$ 200,00</span>
+              <span class="total-cart--total-price">R$ 200,00</span>
             </div>
           </section>
         </div>

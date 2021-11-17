@@ -1,11 +1,13 @@
+let currentPage = 'todos'
+
 populateShowcase()
+updateCart()
 
 const addToCartButtons = document.querySelectorAll('span[data-id]')
 
 addToCartButtons.forEach((button) => {
   button.addEventListener('click', addToCart)
 })
-
 
 function addToCart(e){
   const productId = e.target.dataset.id
@@ -19,12 +21,36 @@ function addToCart(e){
 
   if(!cart.includes(product)){
     cart.push(product)
-  }
-
-  updateCart()
+    updateCart()
+  }  
 }
+
+const pages = document.querySelectorAll('.header--container nav a')
+pages.forEach((page) => {
+  page.addEventListener('click', (e) => {
+    e.preventDefault()
+    currentPage = e.currentTarget.title
+    populateShowcase(currentPage)
+  })
+})
+
+// function removeItem(){
+//   const productId = e.target.dataset.id
+//   let product = {}
+  
+//   for(let i = 0; i < products.length; i++){
+//     if(products[i].id === productId){
+//       product = products[i]
+//     }
+//   }
+
+//   if(!cart.includes(product)){
+//     cart.splice(cart)
+//     updateCart()
+//   }  
+// }
 
 function handleWithShowCartButton(){
  const buyCartDiv = document.getElementById('containerCart')
- buyCartDiv.classList.toggle('hide')
+ buyCartDiv.classList.toggle('hideCart')
 }
