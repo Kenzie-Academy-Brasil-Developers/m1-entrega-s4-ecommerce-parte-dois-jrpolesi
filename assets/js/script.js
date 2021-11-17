@@ -20,10 +20,25 @@ function addToCart(e){
 
   if(!cart.includes(product)){
     cart.push(product)
-  }
-
-  updateCart()
+    updateCart()
+  }  
 }
+
+// function removeItem(){
+//   const productId = e.target.dataset.id
+//   let product = {}
+  
+//   for(let i = 0; i < products.length; i++){
+//     if(products[i].id === productId){
+//       product = products[i]
+//     }
+//   }
+
+//   if(!cart.includes(product)){
+//     cart.splice(cart)
+//     updateCart()
+//   }  
+// }
 
 function handleWithShowCartButton(){
  const buyCartDiv = document.getElementById('containerCart')
