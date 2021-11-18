@@ -382,6 +382,12 @@ aside .cartItem--remove-of-cart:hover {
   display: none;
 }
 
+@media screen and (min-width:760px){
+  .showcase {
+    grid-template-columns: 300px 300px;
+  }
+}
+
 @media screen and (min-width:1080px) {
   .hideCart {
     display: inherit;
